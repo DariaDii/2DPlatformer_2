@@ -8,7 +8,6 @@ public class PlayerUserInterface : MonoBehaviour
     [SerializeField] private Text _textValueCoins;
     [SerializeField] private Image _screenOfDeath;
 
-
     private void OnEnable()
     {
         _wallet.ValueChanged += OnValueChanged;

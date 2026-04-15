@@ -11,13 +11,11 @@ public class Enemy : MonoBehaviour
         _movement.UpdateEnemy(_detection.PlayerPosition);
     }
 
-
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<Sword>(out _))
         {
             _health.TakeDamage();
-            Debug.Log(1);
         }
     }
 }

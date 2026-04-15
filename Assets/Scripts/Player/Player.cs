@@ -35,20 +35,21 @@ public class Player : MonoBehaviour
         }            
     }
 
-    private void OnCollisionEnter2D(Collision2D collision)
+    private void OnTriggerEnter2D(Collider2D collision)
     {
         if (collision.gameObject.TryGetComponent<Coin>(out _))
         {
             _wallet.AddCoin();
         }
 
-        if(collision.gameObject.TryGetComponent<HealingItem>(out HealingItem healingItem))
+        if (collision.gameObject.TryGetComponent<HealingItem>(out HealingItem healingItem))
         {
             _health.Heal(healingItem.HealingAmount);
         }
 
         if (collision.gameObject.TryGetComponent<EnemyAttack>(out EnemyAttack enemyAttack))
         {
+            Debug.Log(1);
             _health.TakeDamage(enemyAttack.DamageAmount);
         }
     }

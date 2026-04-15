@@ -19,7 +19,7 @@ public class InputReader : MonoBehaviour
 
         _inputActions.Enable();
         _inputActions.Player.Jump.performed += JumpPerformed;
-        _inputActions.Player.Sprint.performed += AttackPerformed;
+        _inputActions.Player.Attack.performed += AttackPerformed;
     }
 
     private void Update()
@@ -33,7 +33,7 @@ public class InputReader : MonoBehaviour
     private void OnDisable()
     {
         _inputActions.Player.Jump.performed -= JumpPerformed;
-        _inputActions.Player.Sprint.performed -= AttackPerformed;
+        _inputActions.Player.Attack.performed -= AttackPerformed;
         _inputActions.Disable();        
     }
 

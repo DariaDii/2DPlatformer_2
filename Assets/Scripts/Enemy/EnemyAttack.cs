@@ -8,6 +8,6 @@ public class EnemyAttack : MonoBehaviour
 
     private void Start()
     {
-        DamageAmount=_damageAmount;
+        DamageAmount =_damageAmount;
     }
 }

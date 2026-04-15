@@ -3,7 +3,7 @@ using UnityEngine;
 
 public class Health : MonoBehaviour
 {
-    private float _maxHealth = 100f;
+    [SerializeField] private float _maxHealth = 100f;
 
     public event Action PlayerDie;
     public event Action Hurt;
@@ -21,6 +21,7 @@ public class Health : MonoBehaviour
         HealthAmount -= damage;
         if(HealthAmount<0)
             HealthAmount = 0;
+        Debug.Log($"Здоровье: " + HealthAmount);
 
         if (HealthAmount == 0)
             Die();
@@ -31,6 +32,8 @@ public class Health : MonoBehaviour
         HealthAmount += amount;
         if(HealthAmount>_maxHealth)
             HealthAmount = _maxHealth;
+
+        Debug.Log($"Здоровье: "+ HealthAmount);
     }
 
     public void Die()

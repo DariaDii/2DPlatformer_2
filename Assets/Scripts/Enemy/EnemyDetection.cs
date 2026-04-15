@@ -6,9 +6,9 @@ public class EnemyDetection : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D collision)
     {
+        
         if (collision.TryGetComponent<Player>(out var player))
         {
-            Debug.Log(1);
             PlayerPosition = collision.transform;
         }
     }

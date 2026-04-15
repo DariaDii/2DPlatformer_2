@@ -10,7 +10,6 @@ public class EnemyHealth : MonoBehaviour
     public event Action Death;
     public event Action ReceivingDamage;
 
-
     public void TakeDamage()
     {
         ReceivingDamage?.Invoke();
@@ -26,7 +25,18 @@ public class EnemyHealth : MonoBehaviour
     private void Die()
     {
         Death?.Invoke();
-        _rigidbody.simulated=false;
-        _collider.gameObject.SetActive(false);
+        DisableComponents();
+    }
+
+    private void DisableComponents()
+    {
+        MonoBehaviour[] components = GetComponents<MonoBehaviour>();
+
+        foreach (var component in components)
+        {
+            component.enabled = false;
+        }
+
+        _rigidbody.simulated = false;
     }
 }
