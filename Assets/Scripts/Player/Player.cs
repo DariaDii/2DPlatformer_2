@@ -42,14 +42,13 @@ public class Player : MonoBehaviour
             _wallet.AddCoin();
         }
 
-        if (collision.gameObject.TryGetComponent<HealingItem>(out HealingItem healingItem))
+        if (collision.gameObject.TryGetComponent<ICollectible>(out ICollectible collectible))
         {
-            _health.Heal(healingItem.HealingAmount);
+            collectible.Collect(_health);
         }
 
         if (collision.gameObject.TryGetComponent<EnemyAttack>(out EnemyAttack enemyAttack))
         {
-            Debug.Log(1);
             _health.TakeDamage(enemyAttack.DamageAmount);
         }
     }

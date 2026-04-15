@@ -1,21 +1,12 @@
 using UnityEngine;
 
-public class HealingItem : MonoBehaviour
+public class HealingItem : MonoBehaviour,ICollectible
 {
-    [SerializeField] private float _healingAmount;
+    [field: SerializeField] public float HealingAmount { get; private set; }
 
-    public float HealingAmount { get; private set;  }
-
-    private void Start()
+    public void Collect(Health playerHealth)
     {
-        HealingAmount = _healingAmount;
-    }
-
-    private void OnTriggerEnter2D(Collider2D collision)
-    {
-        if (collision.gameObject.TryGetComponent<Player>(out _))
-        {
-            Destroy(this.gameObject);
-        }
+        playerHealth.Heal(HealingAmount);
+        Destroy(this.gameObject);
     }
 }

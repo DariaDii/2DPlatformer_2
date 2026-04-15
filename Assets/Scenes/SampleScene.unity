@@ -2783,6 +2783,10 @@ PrefabInstance:
       propertyPath: _healingAmount
       value: 10
       objectReference: {fileID: 0}
+    - target: {fileID: 1185233953560176708, guid: c565dc56b84bb2d4f980dd64a47d8527, type: 3}
+      propertyPath: <HealingAmount>k__BackingField
+      value: 10
+      objectReference: {fileID: 0}
     - target: {fileID: 3022769492067725880, guid: c565dc56b84bb2d4f980dd64a47d8527, type: 3}
       propertyPath: m_LocalPosition.x
       value: 49.78322
@@ -14129,6 +14133,10 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 1185233953560176708, guid: c565dc56b84bb2d4f980dd64a47d8527, type: 3}
       propertyPath: _healingAmount
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 1185233953560176708, guid: c565dc56b84bb2d4f980dd64a47d8527, type: 3}
+      propertyPath: <HealingAmount>k__BackingField
       value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3022769492067725880, guid: c565dc56b84bb2d4f980dd64a47d8527, type: 3}
